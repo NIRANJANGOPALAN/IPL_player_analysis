@@ -4,4 +4,4 @@ def balls_to_overs(balls):
     return f"{overs}.{remaining_balls}" if remaining_balls else f"{overs}"
 
 # Apply the conversion
-print(balls_to_overs(25))
+print(balls_to_overs(33))
