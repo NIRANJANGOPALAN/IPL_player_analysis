@@ -1,0 +1,615 @@
+<div class="st-table-wrap col-100 floatLft tab-content scrollt" id="bowlingTAB" >
+    <!-- ngIf: selbattingStatsList.col4 == 'mostWickets' || selbattingStatsList.col4 =='mostMaidens' || selbattingStatsList.col4== 'mostDotBalls' || selbattingStatsList.col4== 'bestBowlingAverage' || selbattingStatsList.col4== 'bestBowlingEconomy' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'mosthattricks' -->
+    <table class="st-table statsTable ng-scope" width="100%" cellpadding="0" cellspacing="0" border-collapse:=""
+        collapse;=""
+        ng-if="selbattingStatsList.col4 == 'mostWickets' || selbattingStatsList.col4 =='mostMaidens' || selbattingStatsList.col4== 'mostDotBalls' || selbattingStatsList.col4== 'bestBowlingAverage' || selbattingStatsList.col4== 'bestBowlingEconomy' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'mosthattricks'"
+        ng-class="{'archiveseason':(displayStatsSeasonName <= 2021)}">
+        <tbody>
+            <tr class="st-table__head">
+                <th width="6%">POS</th>
+                <th width="16%" class="">Player</th> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <th width="6%" ng-if="selbattingStatsList.col4=='mostWickets'" class="ng-scope">Wkts</th>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4 == 'bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <th width="6%">Mat</th>
+                <th width="6%">Inns</th>
+                <th width="6%">Ov</th>
+                <th width="6%">Runs</th> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4 != 'bestbowlingfigures' -->
+                <th width="6%"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4 != 'bestbowlingfigures'"
+                    class="ng-scope">BBI</th>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4 != 'bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <th width="6%" ng-if="selbattingStatsList.col4!='bestBowlingAverage'" class="ng-scope">Avg</th>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <th width="6%" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'" class="ng-scope">Econ</th>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <th width="6%" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'" class="ng-scope">SR</th>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <th width="6%">4w</th>
+                <th width="6%">5w</th>
+            </tr> <!-- ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_0 np-bg-org" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 13 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <div class="st-team-wrp ng-scope"
+                        ng-if="key==0 &amp;&amp; (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time')">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Khaleel Ahmed.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Khaleel Ahmed.png?v=1"> </div> <a
+                            class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/2964"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/2964">
+                            <div class="st-ply-name ng-binding">Khaleel Ahmed</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                        <div class="sm-logo"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                    </div>
+                    <!-- end ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">17</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">14</td>
+                <td width="6%" class="ng-binding"> 14</td>
+                <td width="6%" class="ng-binding"> 50.0</td>
+                <td width="6%" class="ng-binding">479</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">21/2</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">28.17</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">9.58</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 17.64 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_1" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 14 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Mukesh Kumar.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Mukesh Kumar.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/5622"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/5622">
+                            <div class="st-ply-name ng-binding">Mukesh Kumar</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">17</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">10</td>
+                <td width="6%" class="ng-binding"> 10</td>
+                <td width="6%" class="ng-binding"> 35.3</td>
+                <td width="6%" class="ng-binding">368</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">14/3</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">21.64</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">10.36</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 12.52 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_2" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 17 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Kuldeep Yadav.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Kuldeep Yadav.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/261"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/261">
+                            <div class="st-ply-name ng-binding">Kuldeep Yadav</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">16</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">11</td>
+                <td width="6%" class="ng-binding"> 11</td>
+                <td width="6%" class="ng-binding"> 43.0</td>
+                <td width="6%" class="ng-binding">374</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">55/4</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">23.37</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">8.69</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 16.12 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">1</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_3" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 28 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Axar Patel.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Axar Patel.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/1113"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/1113">
+                            <div class="st-ply-name ng-binding">Axar Patel</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">11</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">14</td>
+                <td width="6%" class="ng-binding"> 14</td>
+                <td width="6%" class="ng-binding"> 44.0</td>
+                <td width="6%" class="ng-binding">337</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">25/2</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">30.63</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">7.65</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 24.00 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_4" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 38 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Ishant Sharma.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Ishant Sharma.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/38"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/38">
+                            <div class="st-ply-name ng-binding">Ishant Sharma</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">10</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">9</td>
+                <td width="6%" class="ng-binding"> 9</td>
+                <td width="6%" class="ng-binding"> 27.0</td>
+                <td width="6%" class="ng-binding">265</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">34/3</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">26.50</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">9.81</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 16.20 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_5" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 42 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Rasikh Salam.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Rasikh Salam.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20577"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20577">
+                            <div class="st-ply-name ng-binding">Rasikh Salam</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">9</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">8</td>
+                <td width="6%" class="ng-binding"> 8</td>
+                <td width="6%" class="ng-binding"> 24.3</td>
+                <td width="6%" class="ng-binding">269</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">34/3</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">29.88</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">10.97</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 16.33 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_6" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 55 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img ng-src="https://scores.iplt20.com/ipl/playerimages/Anrich Nortje.png?v=1"
+                                alt="" onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Anrich Nortje.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/5433"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/5433">
+                            <div class="st-ply-name ng-binding">Anrich Nortje</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">7</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">6</td>
+                <td width="6%" class="ng-binding"> 6</td>
+                <td width="6%" class="ng-binding"> 22.0</td>
+                <td width="6%" class="ng-binding">294</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">59/3</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">42.00</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">13.36</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 18.85 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_7" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 72 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img
+                                ng-src="https://scores.iplt20.com/ipl/playerimages/Tristan Stubbs.png?v=1" alt=""
+                                onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Tristan Stubbs.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20631"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20631">
+                            <div class="st-ply-name ng-binding">Tristan Stubbs</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">3</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">14</td>
+                <td width="6%" class="ng-binding"> 2</td>
+                <td width="6%" class="ng-binding"> 2.0</td>
+                <td width="6%" class="ng-binding">15</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">11/2</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">5.00</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">7.50</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 4.00 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_8" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 96 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img
+                                ng-src="https://scores.iplt20.com/ipl/playerimages/Lizaad Williams.png?v=1" alt=""
+                                onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/images/default-player-statsImage.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20727"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/20727">
+                            <div class="st-ply-name ng-binding">Lizaad Williams</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">1</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">2</td>
+                <td width="6%" class="ng-binding"> 2</td>
+                <td width="6%" class="ng-binding"> 6.0</td>
+                <td width="6%" class="ng-binding">72</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">38/1</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">72.00</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">12.00</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 36.00 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <tr ng-repeat="(key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit"
+                class="DC_9" ng-class="{'np-bg-org' : key==0}">
+                <td width="6%" class="ng-binding"> 97 </td>
+                <td width="10%">
+                    <!-- ngIf: key==0 && (displayStatsSeasonName>2021 || displayStatsSeasonName=='All Time') -->
+                    <!-- ngIf: key==0 && displayStatsSeasonName<=2021 --> <!-- ngIf: key!=0 -->
+                    <div class="st-team-wrp w-100 flexDisplay alignCenter ng-scope" ng-if="key!=0">
+                        <div class="pbi"> <img
+                                ng-src="https://scores.iplt20.com/ipl/playerimages/Mitchell Marsh.png?v=1" alt=""
+                                onerror="this.src = basePath+'images/default-player-statsImage.png?v=1';"
+                                src="https://scores.iplt20.com/ipl/playerimages/Mitchell Marsh.png?v=1"> </div>
+                        <div class="np-ico"> <img ng-src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1" alt=""
+                                onerror="this.remove()" src="https://scores.iplt20.com/ipl/teamlogos/DC.png?v=1"> </div>
+                        <a class="st-ply" ng-href="https://www.iplt20.com/teams/delhi-capitals/squad-details/"
+                            ng-click="click_stats(list,'player',list.BowlerName)"
+                            ng-class="{disableLink:(displayStatsSeasonName<=2021 || displayStatsSeasonName=='All Time')}"
+                            href="https://www.iplt20.com/teams/delhi-capitals/squad-details/">
+                            <div class="st-ply-name ng-binding">Mitchell Marsh</div>
+                            <div class="st-ply-tm-name ng-binding">DC</div>
+                        </a>
+                    </div><!-- end ngIf: key!=0 -->
+                </td> <!-- ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <td width="6%" class="ng-binding ng-scope np-tableruns" ng-if="selbattingStatsList.col4=='mostWickets'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='mostWickets'}">1</td>
+                <!-- end ngIf: selbattingStatsList.col4=='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostMaidens' -->
+                <!-- ngIf: selbattingStatsList.col4=='mostDotBalls' -->
+                <!-- ngIf: selbattingStatsList.col4=='mosthattricks' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4=='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4=='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">4</td>
+                <td width="6%" class="ng-binding"> 3</td>
+                <td width="6%" class="ng-binding"> 8.0</td>
+                <td width="6%" class="ng-binding">103</td> <!-- ngIf: selbattingStatsList.col4!='mostWickets' -->
+                <!-- ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <td width="6%" class="ng-binding ng-scope"
+                    ng-if="selbattingStatsList.col4!='mostMaidens' &amp;&amp; selbattingStatsList.col4!='mostDotBalls' &amp;&amp; selbattingStatsList.col4!='mosthattricks' &amp;&amp; selbattingStatsList.col4!='bestbowlingfigures'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestbowlingfigures'}">37/1</td>
+                <!-- end ngIf: selbattingStatsList.col4!='mostMaidens' && selbattingStatsList.col4!='mostDotBalls' && selbattingStatsList.col4!='mosthattricks' && selbattingStatsList.col4!='bestbowlingfigures' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingAverage'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingAverage'}">103.00</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingAverage' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingEconomy'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingEconomy'}">12.87</td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingEconomy' -->
+                <!-- ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding ng-scope" ng-if="selbattingStatsList.col4!='bestBowlingStrikeRate'"
+                    ng-class="{'np-tableruns' : selbattingStatsList.col4=='bestBowlingStrikeRate'}"> 48.00 </td>
+                <!-- end ngIf: selbattingStatsList.col4!='bestBowlingStrikeRate' -->
+                <td width="6%" class="ng-binding">0</td>
+                <td width="6%" class="ng-binding">0</td>
+            </tr>
+            <!-- end ngRepeat: (key,list) in tourBowlingStats | filter:playerNameSearch | limitTo:statsListLimit -->
+            <!-- ngIf: tourBowlingStats== undefined || tourBowlingStats.length ==0 -->
+        </tbody>
+    </table>
+    <!-- end ngIf: selbattingStatsList.col4 == 'mostWickets' || selbattingStatsList.col4 =='mostMaidens' || selbattingStatsList.col4== 'mostDotBalls' || selbattingStatsList.col4== 'bestBowlingAverage' || selbattingStatsList.col4== 'bestBowlingEconomy' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'bestBowlingStrikeRate' || selbattingStatsList.col4== 'mosthattricks' -->
+    <!-- ngIf: selbattingStatsList.col4 == 'mostDotBallsInnings' || selbattingStatsList.col4 =='bestBowlingEconomyInnings' || selbattingStatsList.col4== 'bestBowlingStrikeRateInnings' || selbattingStatsList.col4== 'mostRunsConcededInnings' || selbattingStatsList.col4== 'bestbowlingfigures' -->
+    <div class="np-mostrunsTab__btn view-all ng-hide"
+        ng-show="statsListLimit == 20 &amp;&amp; tourBowlingStats.length > 20"
+        ng-click="click_stats(list,'viewall','view full list')"> <a href="javascript:void(0);"
+            ng-click="showAllBattingStatsList()">View All</a> </div>
+</div>
