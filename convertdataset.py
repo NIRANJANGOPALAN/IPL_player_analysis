@@ -19,4 +19,4 @@ table = tables[0]
 
 # Print the table
 print(table)
-table.to_csv('kkr_batting_2024_players_records.csv', index=False)
+# table.to_csv('kkr_batting_2024_players_records.csv', index=False)
