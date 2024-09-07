@@ -35,12 +35,6 @@ The research utilizes various analytical techniques and machine learning models,
 - Challenges in predicting player auction values
 - Specific insights for KKR and DC squad optimization
 
-## Limitations
-
-- Challenges in evaluating new players with limited IPL data
-- Difficulties in accurately predicting auction values
-- Unforeseen circumstances affecting team performance
-
 ## Conclusion
 
 This research contributes to the field of quantitative sports analytics, demonstrating the importance of data-driven decision-making in modern sports management. It provides a framework for improving player selection, strategy formulation, and overall team management across various sports disciplines.
@@ -49,7 +43,8 @@ This research contributes to the field of quantitative sports analytics, demonst
 
 Niranjan Gopalan
 
-## Acknowledgements
-
-
 ## License
+MIT License
+
+Copyright (c) 2024 Niranjan Gopalan
+https://niranjangopalan.github.io/
